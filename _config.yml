@@ -27,8 +27,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/jekyll-minimag" # the subpath of your site, e.g. /blog
 
 url: "https://chess-spyder.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: chessspyder
-github_username:  chess-spyder
+twitter_username: fictitious
+github_username:  fictitious
 
 # Build settings
 markdown: kramdown

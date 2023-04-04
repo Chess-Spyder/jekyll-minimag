@@ -4,6 +4,8 @@ A work in progress…
 
 A Jekyll site based on the minima theme (version 2.5.1). (The dependence on the gem theme has been overridden, so updates to minima will have no effect on minimag.)
 
+This repo is designed for development within a Docker container.
+
 One departure of minimag from minima is the implementation of a “card” presentation, including an illustration, for each post’s entry on posts-listing pages. A card has the following elements:
 * An image
 * A text component, made up of subcomponents

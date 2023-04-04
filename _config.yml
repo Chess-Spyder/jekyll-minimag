@@ -19,14 +19,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-
-# Against standard advice, when the following line was NOT commented out, I'd get a 404 error when 
-#   serving locally.
-#   Inspired by this Stack Overflow post, I commented out this line and it worked fine:
-#     https://stackoverflow.com/questions/56100280/how-to-fix-error-not-found-error-about-jekyll-in-localhost4000
 baseurl: "/jekyll-minimag" # the subpath of your site, e.g. /blog
-
 url: "https://chess-spyder.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
 twitter_username: fictitious
 github_username:  fictitious
 

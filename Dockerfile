@@ -68,3 +68,12 @@ RUN rbenv install ${RUBY_VERSION} \
 # "       use this line instead:"
 # "       RUN gem install jekyll -v '~>3.9'"
 RUN gem install jekyll -v '3.9.3'
+
+# Set the locale for the Docker container to prevent encoding-method issues.
+# See https://leimao.github.io/blog/Docker-Locale/
+# See also @Soheil TT’s answer «https://stackoverflow.com/a/66516147/8401379»
+#   and @Edenshaw’s comment thereto.
+# (This goes beyond Bill Raymond’s Gist.)
+RUN apt-get -y install locales
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+    locale-gen

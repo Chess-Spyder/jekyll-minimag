@@ -6,18 +6,41 @@ A Jekyll site based on the minima theme (version 2.5.1). (The dependence on the
 
 This repo is designed for development within a Docker container.
 
+The initial construction of this site follows Bill Raymond’s YouTube video “[Draft training - Run GitHub Pages in a Docker container](https://www.youtube.com/watch?v=4zCZhPjzlc0&lc=Ugw9B54_UzDEPIQFP_N4AaABAg),” which was a draft and unlisted as of April 2, 2023.
+
+## Features (that differentiate minimag from minima)
+### Each blog post is represented on listings pages by a “Card”
 One departure of minimag from minima is the implementation of a “card” presentation, including an illustration, for each post’s entry on posts-listing pages. A card has the following elements:
-* An image
+* An image component
 * A text component, made up of subcomponents
   * Post title
   * Post excerpt
   * Post date (The last-updated date)
   * Post author
 
-The initial construction of this site follows Bill Raymond’s YouTube video “[Draft training - Run GitHub Pages in a Docker container](https://www.youtube.com/watch?v=4zCZhPjzlc0&lc=Ugw9B54_UzDEPIQFP_N4AaABAg),” which was a draft and unlisted as of April 2, 2023.
+* A “featured post” will have a horizontal card format such that the image will occupy the top of the card, and the text elements will appear below the image
+  * All featured-post cards will be the same width, and narrow enough so that on a desktop display, multiple cards will typically span a row of cards for featured posts.
+* The posts in a list of not necessarily featured posts will have a vertical card format such that the image will occupy the left part of the card, and the text elements will appear in the right side of the card.
+  * Each vertical-format card will span the full width of the display.
+
+### The URLs of posts do *not* encode the post’s date or the post’s category
+In its out-of-the-box configuration, the URL for a post `2023-04-02-welcome-to-jekyll.markdown` is:
+
+
+This is in contrast to the default behavior of, the built-in theme minima, where the URL for a post encodes the post’s date and categories. E.g., when the categories are “jekyll” and “update”:
+
+`http://127.0.0.1:4000/jekyll-minimag/jekyll/update/2023/04/02/welcome-to-jekyll.html`
+
+
 
 # Usage notes
-## Images for posts
+## Posts
+### By default, posts use layout `post.html`
+By default (due to a setting in `_config.yml`), every post will inherit the layout `post.html`.
+
+Thus it is not necessary to include `layout: post` in the front matter of a post.
+
+### Images for posts
 There are three types of images for posts: (a) `card-image`, (b) `top-image`, and (c) interior images. Types (a) and (b) require special attention in the post’s front matter; type (c) does not.
 * `card-image`
   * An image associated with a particular post to be displayed in the *card* for that post on a posts-listing page, such as the home page, a category listing page, or an archive page.

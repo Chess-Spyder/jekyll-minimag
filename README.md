@@ -24,12 +24,13 @@ One departure of minimag from minima is the implementation of a “card” prese
   * Each vertical-format card will span the full width of the display.
 
 ### The URLs of posts do *not* encode the post’s date or the post’s category
-In its out-of-the-box configuration, the URL for a post `2023-04-02-welcome-to-jekyll.markdown` is:
+In its out-of-the-box configuration, the URL for a post `2023-04-02-welcome-to-jekyll.markdown` is simply `/welcome-to-jekyll`.
 
+This is in contrast to the default behavior of, the built-in theme minima, where the URL for a post encodes the post’s date and categories. E.g., when the categories are “jekyll” and “update”: `/jekyll/update/2023/04/02/welcome-to-jekyll.html`.
 
-This is in contrast to the default behavior of, the built-in theme minima, where the URL for a post encodes the post’s date and categories. E.g., when the categories are “jekyll” and “update”:
+This decision for minimag was made primarily to allow the date of a post to be updated without changing its URL.
 
-`http://127.0.0.1:4000/jekyll-minimag/jekyll/update/2023/04/02/welcome-to-jekyll.html`
+Note: posts now share the same namespace as pages, so there is the possibility of collisions. Names of posts and pages must be chosen to avoid such a collision.
 
 
 

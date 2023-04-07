@@ -1,4 +1,6 @@
-# jekyll-minimag
+# jekyll-minimag: A skelton Jekyll-powered static site for a blog
+
+## Overview
 
 A work in progress…
 
@@ -30,18 +32,36 @@ This is in contrast to the default behavior of, the built-in theme minima, where
 
 This decision for minimag was made primarily to allow the date of a post to be updated without changing its URL.
 
-Note: posts now share the same namespace as pages, so there is the possibility of collisions. Names of posts and pages must be chosen to avoid such a collision.
+Note: This decision implies that posts now share the same namespace as pages, so there is the possibility of collisions. Names of posts and pages must be chosen to avoid such a collision.
 
+Related to this: The `_posts` directory is now flat: there are not spearate folders by date and/or category.
 
+## Selective file tree
+```
+├── _includes
+├── _layouts
+├── _pages
+├── _posts
+│   └── 2023-04-02-welcome-to-jekyll.markdown
+├── _sass
+├── about.md
+├── assets
+│   ├── images
+│   │   └── posts
+│   │       ├── 2023-04-02-Oakland-Bay-Bridge-east-span-photo-1575649212494-720dd18f9c35.avif
+│   ├── main.scss
+│   └── minima-social-icons.svg
+└── index.md
+```
 
-# Usage notes
-## Posts
-### By default, posts use layout `post.html`
+## Usage notes
+### Posts
+#### By default, posts use layout `post.html`
 By default (due to a setting in `_config.yml`), every post will inherit the layout `post.html`.
 
 Thus it is not necessary to include `layout: post` in the front matter of a post.
 
-### Images for posts
+#### Images for posts
 There are three types of images for posts: (a) `card-image`, (b) `top-image`, and (c) interior images. Types (a) and (b) require special attention in the post’s front matter; type (c) does not.
 * `card-image`
   * An image associated with a particular post to be displayed in the *card* for that post on a posts-listing page, such as the home page, a category listing page, or an archive page.
@@ -72,11 +92,58 @@ Usage notes:
 * Ideally, whatever image plays the role of `card-image` should have a native aspect ratio close to that of the frame in the card into which it must fit.
 * If the same image should be used for both `card-image` and `top-image`, it is sufficient to specify that image for `top-image`, and leave `card-image` unspecified. In that case the image for `top-image` will be chosen for `card-image`.
 
-# License
+#### Location for post-specific images
+It is intended that images used only in particular posts should be located here:
+`assets/images/posts`
+
+`config.yml` now defines two related variables:
+```yaml
+url_images: "/assets/images"
+url_post_images: "/assets/images/posts"
+```
+
+#### Interior images
+See the post 2023-04-06-displaying-interior-images-with-markdown.markdown for ways that an image can be included in the interior of a post using Markdown syntax:
+
+### License
 
 This site structure is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-# Release history
+## Release history
 * v0.0.1, April 2, 2023
   * Essentially identical to the default, built-in minima theme, except that theme is frozen at version 2.5.1.
   * Configured for development within a Docker container.
+* v.0.0.2, April 4, 2023
+  * Sets the locale (and UTF-8) for Docker container
+* v.0.0.3, April 4, 2023
+  * `post.html` is now the default layout for posts. (No need to specify in front matter of a post.)
+  * URL of a post is now simply the sluggified title; URL doesn’t encode the data or any categories. Ditto for the `_posts` directory: it’s flat.
+* Pending
+  * The navbar has been removed from `_includes/header.html` and into its own `_includes/navbar.html`.
+    * This gives greater flexibility is placing the navbar either above or below a header banner.
+  * `site.description` is now reserved exclusively for use by the jekyll-seo-tag plugin.
+    * A new variable, `description_for_display`, is defined in `config.yml` to be used for display (e.g., in the footer).
+
+## To Dos and outstanding issues
+### Add a site search function
+I should probably use either Google or DuckDuckGo. See “[The easiest search option for Jekyll](https://blog.webjeda.com/jekyll-search/),” WebJeda, July 18, 2016.
+### jekyll-seo-tag
+Minimag inherits from minima the jekyll-seo-tag plugin. From README_minima.md:
+
+> Minima comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
+
+The [usage docs](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md) for jekyll-seo-tag identify a large number of site-wide variables that this plugin will exploit when they’re present, including `title`, `tagline`, `description`, `url`, `author`, `twitter` (including `twitter:card` and `twitter:username`), `facebook` (and associated properties), `logo`, `social` (and associated properties), `google_site_verification`, and `locale`.
+
+At the page/post level, tThe SEO tag will respect the following YAML front matter if included in a post, page, or document:
+
+* `title` - The title of the post, page, or document
+* `description` - A short description of the page's content
+* `image` - URL to an image associated with the post, page, or document (e.g., `/assets/page-pic.jpg`)
+* `author` - Page-, post-, or document-specific author information (see [Advanced usage](advanced-usage.md#author-information))
+* `locale` - Page-, post-, or document-specific locale information. Takes priority over existing front matter attribute `lang`.
+
+*Note:* Front matter defaults can be used for any of the above values as described in advanced usage with an image example.
+
+*Questions:*
+* Since one of my personal use cases is to use this blog as a *complement* to a main site (i.e., being accessed by visitors at TLD/blog, via Cloudflare workers after being served directly at blog.TLD subdomain), I have to consider how much of this plugin’s site-wide function conflicts with what I’m already (or should be) doing on the main site.
+* Is the post-specific SEO stuff worthwhile? Doesn’t Google do a good-enough job on this?

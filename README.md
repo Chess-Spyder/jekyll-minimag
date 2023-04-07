@@ -1,18 +1,18 @@
-# jekyll-minimag: A skelton Jekyll-powered static site for a blog
+# jekyll-minimag: A skeleton Jekyll-powered static site for a blog
 
 ## Overview
 
 A work in progress…
 
-A Jekyll site based on the minima theme (version 2.5.1). (The dependence on the gem theme has been overridden, so updates to minima will have no effect on minimag.)
+A Jekyll site based on the minima theme (version 2.5.1). (The dependence on the gem theme has been overridden, so updates to minima will have no effect on Minimag.)
 
 This repo is designed for development within a Docker container.
 
 The initial construction of this site follows Bill Raymond’s YouTube video “[Draft training - Run GitHub Pages in a Docker container](https://www.youtube.com/watch?v=4zCZhPjzlc0&lc=Ugw9B54_UzDEPIQFP_N4AaABAg),” which was a draft and unlisted as of April 2, 2023.
 
-## Features (that differentiate minimag from minima)
+## Features (that differentiate Minimag from minima)
 ### Each blog post is represented on listings pages by a “Card”
-One departure of minimag from minima is the implementation of a “card” presentation, including an illustration, for each post’s entry on posts-listing pages. A card has the following elements:
+One departure of Minimag from minima is the implementation of a “card” presentation, including an illustration, for each post’s entry on posts-listing pages. A card has the following elements:
 * An image component
 * A text component, made up of subcomponents
   * Post title
@@ -30,11 +30,19 @@ In its out-of-the-box configuration, the URL for a post `2023-04-02-welcome-to-j
 
 This is in contrast to the default behavior of, the built-in theme minima, where the URL for a post encodes the post’s date and categories. E.g., when the categories are “jekyll” and “update”: `/jekyll/update/2023/04/02/welcome-to-jekyll.html`.
 
-This decision for minimag was made primarily to allow the date of a post to be updated without changing its URL.
+This decision for Minimag was made primarily to allow the date of a post to be updated without changing its URL.
 
 Note: This decision implies that posts now share the same namespace as pages, so there is the possibility of collisions. Names of posts and pages must be chosen to avoid such a collision.
 
 Related to this: The `_posts` directory is now flat: there are not spearate folders by date and/or category.
+
+### More flexibility in defining  header structures and allowing for different header structures for different pages/posts
+The original default layout assumed:
+* that all posts and pages would have the same header/navbar structure
+* that the navbar element was always the topmost element of the page, preventing a banner graphic appearing above the navbar.
+
+In Minimag, the default layout is less opininated about the header. The structure of the header is now not defined by the default layout but rather by each other layout that inherit from default. This gives greater flexibility, for example,  in placing the navbar either above or below a header banner and/or having a different header structure for, for example, the home page than a post page.
+
 
 ## Selective file tree
 ```
@@ -118,11 +126,15 @@ This site structure is available as open source under the terms of the [MIT Lice
 * v.0.0.3, April 4, 2023
   * `post.html` is now the default layout for posts. (No need to specify in front matter of a post.)
   * URL of a post is now simply the sluggified title; URL doesn’t encode the data or any categories. Ditto for the `_posts` directory: it’s flat.
+* v.0.0.4, April 6, 2023
+  * Refactored default layout to be less opinionated. Original default layout assumed that all posts and pages would have the same header/navbar structure. This decision has been moved out of the default layout, into the hands of the other layouts that inherit from default. This gives greater flexibility (a) in placing the navbar either above or below a header banner and (b) to having a more-expansive branding banner image on a home and/or listing page but a smaller branding image on a post page (so as not to distrct from the post-specific featured image).
+  * Created `site.description_for_display` in `config.yml` to leave `site.description` exclusively for the jekyll-seo-tag plugin.
+  * Created assets/images/posts directory to be used for storing all images that are specific to particular posts.
+  * Added an `updated` datetime for posts (though it still needs to be implemented on each post) and it not yet connected to any sorting functionality.
+  * Added an example post that shows ways to display an interior image (i.e., within a post’s content) using Markdown syntax.
 * Pending
   * The navbar has been removed from `_includes/header.html` and into its own `_includes/navbar.html`.
     * This gives greater flexibility is placing the navbar either above or below a header banner.
-  * `site.description` is now reserved exclusively for use by the jekyll-seo-tag plugin.
-    * A new variable, `description_for_display`, is defined in `config.yml` to be used for display (e.g., in the footer).
 
 ## To Dos and outstanding issues
 ### Add a site search function

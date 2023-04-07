@@ -19,11 +19,11 @@ Table of contents
 The following renders the image using Markdown with a full URL constructed by “{{site.url}}/{{site.baseurl}}/assets/images/posts/”:
 
 ```
-![Bay Bridge]({{site.url}}/{{site.baseurl}}/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
+![Bay Bridge]({{site.url}}{{site.baseurl}}/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
 ```
 <!-- {% endraw %} -->
 
-![Bay Bridge]({{site.url}}/{{site.baseurl}}/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
+![Bay Bridge]({{site.url}}{{site.baseurl}}/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
 
 ### Adding the custom site.url_post_images variable
 It’s no fun (not to mention error prone) to have type `/assets/images/posts/` as part of the path every time we want to display an image.
@@ -40,11 +40,11 @@ Now, if ever the file/folder structure of the site changed, and the images for p
 The following renders the image using Markdown with a full URL constructed by “{{site.url}}/{{site.baseurl}}{{site.url_post_images}}/”:
 
 ```
-![Bay Bridge]({{site.url}}/{{site.baseurl}}{{site.url_post_images}}/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
+![Bay Bridge]({{site.url}}{{site.baseurl}}{{site.url_post_images}}/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
 ```
 <!-- {% endraw %} -->
 
-![Bay Bridge]({{site.url}}/{{site.baseurl}}{{site.url_post_images}}/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
+![Bay Bridge]({{site.url}}{{site.baseurl}}{{site.url_post_images}}/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
 
 ## Constructing a relative URL for the image
 

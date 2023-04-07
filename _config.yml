@@ -40,6 +40,9 @@ url: "https://chess-spyder.github.io"
 #     baseurl: "/repo-name"
 baseurl: "/jekyll-minimag" 
 
+url_images: "/assets/images"
+url_post_images: "/assets/images/posts"
+
 twitter_username: fictitious
 github_username:  fictitious
 

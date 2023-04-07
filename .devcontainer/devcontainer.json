@@ -11,7 +11,11 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"neilding.language-liquid",
+				"killalau.vscode-liquid-snippets",
+				"bierner.markdown-preview-github-styles",
+				"ecmel.vscode-html-css"
 			]
 		}
 	}

@@ -56,10 +56,4 @@ using `relative_url`:
 
 ![Bay Bridge]({{"/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif"| relative_url }})
 
-The following renders the image using Markdown with a relative URL constructed by
-<!-- {% raw %} -->
-“ { {"2023-04-02-Oakland-Bay-Bridge-east-span.avif" | prepend: url_post_images |relative_url }}”
-<!-- {% endraw %} -->
-using `prepend` followed by `relative_url`:
-
-![Eastern span of San Francisco–Oakland Bay Bridge]({{"/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif"| relative_url }})
+However, I haven’t yet found a syntax by which I can both (a) use `relative_url` and (b) use `site.url_post_images` to avoid typing `/assets/images/posts/`.

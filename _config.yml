@@ -21,13 +21,24 @@ description: >- # this means to ignore newlines until "baseurl:"
   thanks to Minima theme, from which minimag inherits) and, as a result, this
   description will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "/jekyll-minimag" # the subpath of your site, e.g. /blog
-url: "https://chess-spyder.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 description_for_display: >- # this means to ignore newlines until an outdent
   This is the coolest site for things that it does and for those who want to
   visit it.
 
+############### url and base url
+# See https://mademistakes.com/mastering-jekyll/site-url-baseurl/
+
+# url: the base hostname & protocol for your site, e.g. http://example.com
+#   In particular, do NOT include a trailing forward slash.
+url: "https://chess-spyder.github.io" 
+
+# baseurl: the subpath of your site
+#   Not needed for many sites and can be omitted
+#   Necessary only when hosting site in a subdirectory. This is common when hosting
+#   a project site on GitHub Pages, in which case:
+#     baseurl: "/repo-name"
+baseurl: "/jekyll-minimag" 
 
 twitter_username: fictitious
 github_username:  fictitious

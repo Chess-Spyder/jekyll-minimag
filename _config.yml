@@ -22,6 +22,11 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/jekyll-minimag" # the subpath of your site, e.g. /blog
 url: "https://chess-spyder.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
+description_for_display: >- # this means to ignore newlines until an outdent
+  This is the coolest site for things that it does and for those who want to
+  visit it.
+
+
 twitter_username: fictitious
 github_username:  fictitious
 

@@ -1,0 +1,9 @@
+<!-- Include to hold the navbar -->
+<div class="wrapper">
+    <!-- Prints site.title at left end of the navbar area. -->
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+    {%- include navbar_link_loop_all_pages.html -%}
+  </div>
+
+  

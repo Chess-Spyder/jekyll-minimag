@@ -43,6 +43,8 @@ baseurl: "/jekyll-minimag"
 url_images: "/assets/images"
 url_post_images: "/assets/images/posts"
 
+site_banner_image: "/assets/images/site/site_banner.jpg"
+
 twitter_username: fictitious
 github_username:  fictitious
 

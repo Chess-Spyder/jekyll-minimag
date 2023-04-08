@@ -1,0 +1,178 @@
+:root {
+    --site-title-color: blue ; 
+    --width-textarea-max: 55rem ;
+    --color-white-for-site: white ;
+}
+
+.wrapper {
+    max-width: var(--width-textarea-max) ;
+    outline: solid red ;
+}
+.site-title-banner {
+    color: var(--site-title-color) ;
+}
+
+/* CSS for Navbar */
+
+:root {
+    --navbar-background-color: brown ;
+    --navbar-hamburger-background-color: var(--color-white-for-site) ;
+    --navbar-logo-element-font-size: 1.2rem ;
+    --navbar-logo-element-text-color: var(--navbar-link-color) ;
+    --navbar-link-font-family: sans-serif ;
+    --navbar-link-color: var(--color-white-for-site) ;
+    --navbar-link-text-transform: uppercase ;
+    --navbar-link-font-size: 1.0rem ;
+    --navbar-link-hover-color: black ;
+    --navbar-orientation-switch-width: 800px ;
+    --navbar-list-item-bottom-margin: 1em ;
+}
+
+    /*
+        CSS for collapsed (mobile) version of Navbar.
+        Animation in two parts (a) scale and (b) opacity
+    */
+
+.navbar {
+    position: absolute ;
+    width: 100% ;
+    text-align: left ;
+    top: 100% ;
+    left: 0 ;
+    padding-left: 1em ;
+    padding-top: 1em ;
+    background: var(--navbar-background-color) ;
+    /*  Animation starting point for scaling,
+        triggered by .nav-toggle:checked      */
+    transform: scale(1, 0) ;
+    transform-origin: top ;
+    transition: transform 400ms ease-in-out ;
+}
+
+.navbar-logo-element {
+    margin-bottom: var(--navbar-list-item-bottom-margin) ;
+    font-size: var(--navbar-logo-element-font-size) ;
+    color: var(--navbar-logo-element-text-color) ;
+    text-align: center ;
+}
+
+.navbar ul {
+    margin: 0 ;
+    padding: 0 ;
+    list-style: none ;
+}
+
+.navbar li {
+    margin-bottom: var(--navbar-list-item-bottom-margin) ;
+    text-transform: var(--navbar-link-text-transform) ;
+    font-family: var(--navbar-link-font-family) ;
+    font-size: var(--navbar-link-font-size) ;
+    color: var(--navbar-link-color) ;
+    text-decoration: none ;
+    font-size: var(--navbar-link-font-size) ;
+    /*  Animation starting point for opacity,
+        triggered by .nav-toggle:checked      */
+    opacity: 0 ;
+    transition: opacity 150ms ease-in-out ;
+}
+
+.navbar li a {
+    color: var(--navbar-link-color) ;
+    text-decoration: none ;
+}
+
+
+.navbar li:hover,
+.navbar li:focus {
+    /* color: var(--navbar-link-hover-color) ; */
+    text-decoration: underline ;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1) ;
+}
+
+.nav-toggle:checked ~ nav li {
+    opacity: 1 ;
+    transition: opacity 250ms ease-in-out 250ms ;
+}
+
+
+.nav-toggle {
+    /* Hides the checkbox of the input */
+    display: none ;
+}
+
+.nav-toggle-label {
+    position: absolute ;
+    top: 10em ;
+    right: calc(0% + 55px) ;
+    /* display: flex ;
+    align-items: center ; */
+    background: var(--navbar-hamburger-background-color) ;
+    padding: 15px 12px 10px 10px ;
+    border-radius: 10px ;
+}
+
+.nav-toggle-label span {
+    display: block ;
+    position: relative ;
+}
+
+.nav-toggle-label span svg {
+    width: 36px ;
+    height: 30px ;
+    color: red ;
+}
+
+@media screen and (min-width: 800px) {
+    :root {
+        --navbar-link-color: green ;
+    }
+    .nav-toggle-label {
+        display: none ;
+    }
+ 
+    .navbar {
+        all: unset ;
+        grid-column: 2 / 4 ;
+    }
+
+    .navbar {
+        display: grid ;
+        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr ;;
+    }
+
+
+    .navbar li a {
+        opacity: 1 ;
+    }
+}
+
+
+
+
+
+/* .nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block ;
+    position: relative ;
+    background: blue ;
+    width: 2em ;
+    height: 5px ;
+    border-radius: 5px ;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '' ;
+}
+
+.nav-toggle-label span::before {
+    bottom: 8px ;
+}
+
+.nav-toggle-label span::after {
+    top: 5px ;
+} */

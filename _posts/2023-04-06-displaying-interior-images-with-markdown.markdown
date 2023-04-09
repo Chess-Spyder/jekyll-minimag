@@ -9,7 +9,7 @@ There are multiple ways to display an interior image (i.e., an image in the body
 <!-- Add a Table of Contents -->
 <div style="table-of-contents" markdown="1">
 Table of contents
-* TOC
+1. TOC
 {:toc}
 </div>
 

@@ -26,7 +26,7 @@ The following renders the image using Markdown with a full URL constructed by �
 ![Bay Bridge]({{site.url}}{{site.baseurl}}/assets/images/posts/2023-04-02-Oakland-Bay-Bridge-east-span.avif)
 
 ### Adding the custom site.url_post_images variable
-It’s no fun (not to mention error prone) to have type `/assets/images/posts/` as part of the path every time we want to display an image.
+It’s no fun (not to mention that it’s error prone) to have to type `/assets/images/posts/` as part of the path every time we want to display an image.
 
 So I defined a new, site-wide variable `url_post_images` in `_config.yml`:
 ```

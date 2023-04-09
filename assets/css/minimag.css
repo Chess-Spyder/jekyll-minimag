@@ -13,20 +13,16 @@
     max-width: var(--width-textarea-max) ;
 }
 
-.site-header-A {
+.banner-role {
     border-width: 0 ;
 }
 
-.site-title-banner {
-    color: var(--site-title-color) ;
-}
-
-.site-header-A-title-banner {
+.banner-role-title-strip {
     background-color: var(--site-header-background-color) ;
     text-align: center ;
 }
 
-.site-header-A-title-banner a {
+.banner-role-title-strip a {
     font-size: var(--site-header-title-font-size) ;
     color: var(--site-header-title-font-color) ;
 }

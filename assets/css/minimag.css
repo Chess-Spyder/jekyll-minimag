@@ -2,30 +2,50 @@
     --site-title-color: blue ; 
     --width-textarea-max: 55rem ;
     --color-white-for-site: white ;
+
+    --site-header-title-font-size: 2em ;
+    --site-header-title-font-color: var(--color-white-for-site) ;
+    --site-header-background-color: salmon ;
+
 }
 
 .wrapper {
     max-width: var(--width-textarea-max) ;
-    outline: solid red ;
 }
+
+.site-header-A {
+    border-width: 0 ;
+}
+
 .site-title-banner {
     color: var(--site-title-color) ;
+}
+
+.site-header-A-title-banner {
+    background-color: var(--site-header-background-color) ;
+    text-align: center ;
+}
+
+.site-header-A-title-banner a {
+    font-size: var(--site-header-title-font-size) ;
+    color: var(--site-header-title-font-color) ;
 }
 
 /* CSS for Navbar */
 
 :root {
-    --navbar-background-color: brown ;
+    --navbar-background-color: var(--site-header-background-color) ;
     --navbar-hamburger-background-color: var(--color-white-for-site) ;
-    --navbar-logo-element-font-size: 1.2rem ;
-    --navbar-logo-element-text-color: var(--navbar-link-color) ;
     --navbar-link-font-family: sans-serif ;
     --navbar-link-color: var(--color-white-for-site) ;
     --navbar-link-text-transform: uppercase ;
     --navbar-link-font-size: 1.0rem ;
     --navbar-link-hover-color: black ;
-    --navbar-orientation-switch-width: 800px ;
     --navbar-list-item-bottom-margin: 1em ;
+    --navbar-toggle-label-height: 45px ;
+    --navbar-toggle-label-background-color: white ;
+    --navbar-toggle-label-border-color: black ;
+    --navbar-toggle-label-border-thickness: 2px ;
 }
 
     /*
@@ -33,146 +53,108 @@
         Animation in two parts (a) scale and (b) opacity
     */
 
-.navbar {
-    position: absolute ;
+nav.nav-role {
+    position: relative;
     width: 100% ;
-    text-align: left ;
-    top: 100% ;
-    left: 0 ;
-    padding-left: 1em ;
-    padding-top: 1em ;
     background: var(--navbar-background-color) ;
-    /*  Animation starting point for scaling,
-        triggered by .nav-toggle:checked      */
-    transform: scale(1, 0) ;
-    transform-origin: top ;
-    transition: transform 400ms ease-in-out ;
 }
 
-.navbar-logo-element {
-    margin-bottom: var(--navbar-list-item-bottom-margin) ;
-    font-size: var(--navbar-logo-element-font-size) ;
-    color: var(--navbar-logo-element-text-color) ;
-    text-align: center ;
+.nav-toggle {
+    /* Hides the checkbox used to trigger the toggling of the navbar. */
+    display: none ;
 }
 
-.navbar ul {
+.navbar {
+    padding-inline-start: 1em ;
+    padding-block-end: 1em ;
+}
+
+.navbar-link-list ul {
     margin: 0 ;
     padding: 0 ;
     list-style: none ;
 }
 
-.navbar li {
+.navbar-link-list ul li a {
     margin-bottom: var(--navbar-list-item-bottom-margin) ;
     text-transform: var(--navbar-link-text-transform) ;
     font-family: var(--navbar-link-font-family) ;
     font-size: var(--navbar-link-font-size) ;
     color: var(--navbar-link-color) ;
-    text-decoration: none ;
-    font-size: var(--navbar-link-font-size) ;
-    /*  Animation starting point for opacity,
-        triggered by .nav-toggle:checked      */
-    opacity: 0 ;
-    transition: opacity 150ms ease-in-out ;
 }
 
-.navbar li a {
-    color: var(--navbar-link-color) ;
-    text-decoration: none ;
-}
-
-
-.navbar li:hover,
-.navbar li:focus {
-    /* color: var(--navbar-link-hover-color) ; */
+.navbar-link-list ul li a:hover,
+.navbar-link-list ul li a:focus {
     text-decoration: underline ;
 }
 
-.nav-toggle:checked ~ nav {
-    transform: scale(1, 1) ;
-}
-
-.nav-toggle:checked ~ nav li {
-    opacity: 1 ;
-    transition: opacity 250ms ease-in-out 250ms ;
-}
-
-
-.nav-toggle {
-    /* Hides the checkbox of the input */
-    display: none ;
-}
-
-.nav-toggle-label {
-    position: absolute ;
-    top: 10em ;
-    right: calc(0% + 55px) ;
-    /* display: flex ;
-    align-items: center ; */
-    background: var(--navbar-hamburger-background-color) ;
-    padding: 15px 12px 10px 10px ;
-    border-radius: 10px ;
-}
-
-.nav-toggle-label span {
-    display: block ;
-    position: relative ;
-}
-
-.nav-toggle-label span svg {
-    width: 36px ;
-    height: 30px ;
-    color: red ;
-}
-
-@media screen and (min-width: 800px) {
-    :root {
-        --navbar-link-color: green ;
-    }
+@media screen and (max-width: 800px) {
+    /* NOTE! There are two @media queries that must coordinate. The min-width
+    and max-width values must be exactly equal! */
     .nav-toggle-label {
+        /* Positions the navicon above the navbar, overlapping the header banner image */
+        position: absolute ;
+        right: 10px ;
+        top: calc(-25px - var(--navbar-toggle-label-height)) ;
+        /* Styles the navicon */
+        background: var(--navbar-toggle-label-background-color) ;
+        padding-inline: 15px ;
+        padding-block: 5px ;
+        border-radius: 10px ;
+        border-width: var(--navbar-toggle-label-border-thickness) ;
+        border-style: solid ;
+        border-color: var(--navbar-toggle-label-border-color) ;
+    }
+    
+    .navicon-button {
+        width: calc(var(--navbar-toggle-label-height) * 1.2) ;
+        height: var(--navbar-toggle-label-height) ;
+    }
+    
+    .nav-toggle-label-annotation {
+        font-size: 9px ;
+        text-transform: uppercase ;
+        text-align: center ;
+        display: block ;
+    }
+
+    div.navbar {
+        /* Default state (when hamburger is NOT clicked)  */
         display: none ;
     }
- 
-    .navbar {
-        all: unset ;
-        grid-column: 2 / 4 ;
+
+    .nav-toggle:checked ~ div.navbar {
+        display: block ;
+    }
+}
+
+    /*
+        CSS for expanded (desktop) version of Navbar.
+    */
+@media screen and (min-width: 800px) {
+    /* NOTE! There are two @media queries that must coordinate. The min-width
+    and max-width values must be exactly equal! */
+
+    /* Hides the navicon in the expanded version of Navbar */
+    .nav-toggle-label {
+        display: none ;
     }
 
     .navbar {
         display: grid ;
-        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr ;;
+        grid-template-columns: 1fr auto 1fr ;
     }
 
+    .navbar-link-list {
+        grid-column: 2 / 3 ;
+    }
 
-    .navbar li a {
-        opacity: 1 ;
+    .navbar-link-list ul {
+        display: flex ;
+    }
+
+    .navbar-link-list ul li {
+        margin-inline: 1em ;
+        margin-block-start: var(--navbar-list-item-bottom-margin) ;
     }
 }
-
-
-
-
-
-/* .nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block ;
-    position: relative ;
-    background: blue ;
-    width: 2em ;
-    height: 5px ;
-    border-radius: 5px ;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    content: '' ;
-}
-
-.nav-toggle-label span::before {
-    bottom: 8px ;
-}
-
-.nav-toggle-label span::after {
-    top: 5px ;
-} */

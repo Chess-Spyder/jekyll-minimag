@@ -57,6 +57,7 @@ img.top-of-post-image {
     --navbar-toggle-label-background-color: white ;
     --navbar-toggle-label-border-color: gray ;
     --navbar-toggle-label-border-thickness: 2px ;
+    --nav-toggle-label-annotation-font-size: 9px ;
 }
 
     /*
@@ -123,7 +124,7 @@ nav.nav-role {
     }
     
     .nav-toggle-label-annotation {
-        font-size: 9px ;
+        font-size: var(--nav-toggle-label-annotation-font-size) ;
         text-transform: uppercase ;
         text-align: center ;
         display: block ;

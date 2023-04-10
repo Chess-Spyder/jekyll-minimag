@@ -2,6 +2,16 @@
 # layout: post
 title:  "Different ways to display interior images using Markdown"
 date:  2023-04-06 14:17:03 -0700
+top-image: 2023-04-06-raptor_for_top_of_post_16x9.jpg
+top-image-alt: Raptor flying in a blue sky.
+top-image-caption: >-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+  dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+  sunt in culpa qui officia deserunt mollit anim id est laborum
+
 categories: 
 ---
 There are multiple ways to display an interior image (i.e., an image in the body of a post, rather than an image above the title of the post).

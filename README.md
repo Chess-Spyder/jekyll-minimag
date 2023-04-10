@@ -132,9 +132,17 @@ This site structure is available as open source under the terms of the [MIT Lice
   * Created assets/images/posts directory to be used for storing all images that are specific to particular posts.
   * Added an `updated` datetime for posts (though it still needs to be implemented on each post) and it not yet connected to any sorting functionality.
   * Added an example post that shows ways to display an interior image (i.e., within a post’s content) using Markdown syntax.
-* Pending
-  * The navbar has been removed from `_includes/header.html` and into its own `_includes/navbar.html`.
+* v.0.0.5, April 9, 2023
+  * Moved the `<nav>` landmark role, which had been nested within the banner landmark role, `<header>`, to an independent top-level role.
+    * There’s an accessibility argument for this.
+  * The navbar has been removed from `_includes/header.html` and into its own `_includes/nav-role.html`.
     * This gives greater flexibility is placing the navbar either above or below a header banner.
+    * The navbar no longer automatically populates with all pages.
+    * Instead, you manually populate, in `_includes/nav-role.html`, the list items you want to be represented on the navbar.
+  * There is no longer a logo or site title reference in the navbar.
+    * See `_includes/header_A.html` for how (a) a standalone strip for the site title and/or a logo and (b) the navbar can be separately included in either order.
+* Pending
+
 
 ## To Dos and outstanding issues
 ### Add a site search function

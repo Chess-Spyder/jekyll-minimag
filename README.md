@@ -144,7 +144,9 @@ This site structure is available as open source under the terms of the [MIT Lice
     * See `_includes/header_A.html` for how (a) a standalone strip for the site title and/or a logo and (b) the navbar can be separately included in either order.
 *v.0.0.6, April 10, 2023
   * Add ability to specify an image in the front matter (`top-image`) to be displayed at the top of each post (above the post’s title). You can specify alt text with `top-image-alt`.
-    * Optionally, specify text (`top-image-caption`), which can be multi-line, to appear directly below the top-image as a caption. 
+    * Optionally, specify text (`top-image-caption`), which can be multi-line, to appear directly below the top-image as a caption.
+*v.0.0.7, April 10, 2023
+  * Add CSS custom property (--nav-toggle-label-vertical-offset-fudge-term) to adjust the vertical position of the “hamburger” navicon.
 * Pending
   * …
 

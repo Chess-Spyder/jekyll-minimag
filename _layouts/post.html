@@ -4,6 +4,24 @@ layout: default
 {%- include header.html -%}
 {%- include nav-role.html -%}
 
+{% if page.top-image %}
+  <!-- There is a top-image specified -->
+  <div class="top-of-post-image wrapper">
+    <img src="{{site.url}}{{site.baseurl}}{{site.url_post_images}}/{{page.top-image}}" class="top-of-post-image"  alt="{{page.top-image-alt}}">
+
+
+  {% if page.top-image-caption %}
+    <!-- There is a top-image caption specified -->
+    <div class="wrapper top-image-caption">
+      <p>{{page.top-image-caption}}</p>
+    </div>
+
+  {% endif %}
+  </div>
+{% else %}
+  <!-- There is no top-image specified. -->
+{% endif %}
+
 <main class="page-content" aria-label="Content">
   <div class="wrapper">
 

@@ -92,6 +92,7 @@ There are three types of images for posts: (a) `card-image`, (b) `top-image`, 
   * A `top-image` is not mandatory. Thus,
     * If a `top-image` is specified, it is used at the top of the post.
     * If a `top-image` is not specified, an image is not displayed at the top of the post.
+  * The top image also has an associated, optional, `top-image-caption`.
 * Interior images
   * These are images displayed in the body of a post.
   * These don’t require special attention in the front matter, because the image is rendered within the content of the post’s file.
@@ -142,6 +143,8 @@ This site structure is available as open source under the terms of the [MIT Lice
   * There is no longer a logo or site title reference in the navbar.
     * See `_includes/header_A.html` for how (a) a standalone strip for the site title and/or a logo and (b) the navbar can be separately included in either order.
 * Pending
+  * Added `page.top-image`, `page.top-image-alt`, and `page.top-image-caption`
+    * In process
 
 
 ## To Dos and outstanding issues

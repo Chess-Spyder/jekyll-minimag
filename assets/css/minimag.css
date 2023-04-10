@@ -27,6 +27,21 @@
     color: var(--site-header-title-font-color) ;
 }
 
+div.top-of-post-image {
+    max-width: var(--width-textarea-max) ;
+}
+
+img.top-of-post-image {
+    max-width: 100% ;
+    height: auto ;
+    object-fit: scale-down ;
+}
+
+.top-image-caption {
+    font-size: 0.8rem ;
+    font-style: italic ;
+}
+
 /* CSS for Navbar */
 
 :root {

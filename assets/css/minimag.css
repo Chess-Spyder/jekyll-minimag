@@ -46,7 +46,6 @@ img.top-of-post-image {
 
 :root {
     --navbar-background-color: var(--site-header-background-color) ;
-    --navbar-hamburger-background-color: var(--color-white-for-site) ;
     --navbar-link-font-family: sans-serif ;
     --navbar-link-color: var(--color-white-for-site) ;
     --navbar-link-text-transform: uppercase ;

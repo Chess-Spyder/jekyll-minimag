@@ -52,10 +52,10 @@ img.top-of-post-image {
     --navbar-link-font-size: 1.0rem ;
     --navbar-link-hover-color: black ;
     --navbar-list-item-bottom-margin: 1em ;
-    --navbar-toggle-label-height: 45px ;
     --navbar-toggle-label-background-color: white ;
     --navbar-toggle-label-border-color: gray ;
     --navbar-toggle-label-border-thickness: 2px ;
+    --navbar-toggle-label-size: 20px ;
     --nav-toggle-label-annotation-font-size: 9px ;
 }
 
@@ -118,8 +118,8 @@ nav.nav-role {
     }
     
     .navicon-button {
-        width: calc(var(--navbar-toggle-label-height) * 1.2) ;
-        height: var(--navbar-toggle-label-height) ;
+        width: calc(var(--navbar-toggle-label-size) * 1.2) ;
+        height: var(--navbar-toggle-label-size) ;
     }
     
     .nav-toggle-label-annotation {

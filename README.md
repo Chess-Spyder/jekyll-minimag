@@ -142,10 +142,11 @@ This site structure is available as open source under the terms of the [MIT Lice
     * Instead, you manually populate, in `_includes/nav-role.html`, the list items you want to be represented on the navbar.
   * There is no longer a logo or site title reference in the navbar.
     * See `_includes/header_A.html` for how (a) a standalone strip for the site title and/or a logo and (b) the navbar can be separately included in either order.
+*v.0.0.5, April 10, 2023
+  * Add ability to specify an image in the front matter (`top-image`) to be displayed at the top of each post (above the post’s title). You can specify alt text with `top-image-alt`.
+    * Optionally, specify text (`top-image-caption`), which can be multi-line, to appear directly below the top-image as a caption. 
 * Pending
-  * Added `page.top-image`, `page.top-image-alt`, and `page.top-image-caption`
-    * In process
-
+  * …
 
 ## To Dos and outstanding issues
 ### Add a site search function

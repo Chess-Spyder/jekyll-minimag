@@ -55,7 +55,7 @@ img.top-of-post-image {
     --navbar-list-item-bottom-margin: 1em ;
     --navbar-toggle-label-height: 45px ;
     --navbar-toggle-label-background-color: white ;
-    --navbar-toggle-label-border-color: black ;
+    --navbar-toggle-label-border-color: gray ;
     --navbar-toggle-label-border-thickness: 2px ;
 }
 

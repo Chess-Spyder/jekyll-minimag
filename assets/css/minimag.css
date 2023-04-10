@@ -115,8 +115,8 @@ nav.nav-role {
         top: calc(var(--nav-toggle-label-vertical-offset) * -1) ;
         /* Styles the navicon */
         background: var(--navbar-toggle-label-background-color) ;
-        padding-inline: 15px ;
-        padding-block: 5px ;
+        padding-inline: 5px ;
+        padding-block: 0px ;
         border-radius: 10px ;
         border-width: var(--navbar-toggle-label-border-thickness) ;
         border-style: solid ;

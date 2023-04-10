@@ -52,11 +52,17 @@ img.top-of-post-image {
     --navbar-link-font-size: 1.0rem ;
     --navbar-link-hover-color: black ;
     --navbar-list-item-bottom-margin: 1em ;
+
     --navbar-toggle-label-background-color: white ;
     --navbar-toggle-label-border-color: gray ;
     --navbar-toggle-label-border-thickness: 2px ;
     --navbar-toggle-label-size: 20px ;
     --nav-toggle-label-annotation-font-size: 9px ;
+    /* Compute vertical offset to raise “hamburger” navicon upward toward and into the site-title header */
+        /*  This fudge term is arbitrary, to adjust the height to your liking
+            Conceivably, this value could be redefined, differently, for posts rather than home pages. */
+    --nav-toggle-label-vertical-offset-fudge-term: -18px ;
+    --nav-toggle-label-vertical-offset: calc(var(--navbar-toggle-label-size) + var(--nav-toggle-label-annotation-font-size) * 1.5 + var(--navbar-toggle-label-border-thickness) * 2 + var(--nav-toggle-label-vertical-offset-fudge-term))
 }
 
     /*
@@ -106,7 +112,7 @@ nav.nav-role {
         /* Positions the navicon above the navbar, overlapping the header banner image */
         position: absolute ;
         right: 10px ;
-        top: calc(-25px - var(--navbar-toggle-label-height)) ;
+        top: calc(var(--nav-toggle-label-vertical-offset) * -1) ;
         /* Styles the navicon */
         background: var(--navbar-toggle-label-background-color) ;
         padding-inline: 15px ;

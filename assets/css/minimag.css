@@ -3,6 +3,11 @@
     /* Refactoring scss variables as custom properties */
 
     /* Basic styling  */
+    
+    /* See https://css-tricks.com/snippets/css/system-font-stack/  */
+    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --base-font-family: var(--system-ui) ;
     --color-black: black ;
     --color-white: white ;
     --color-gray: hsl(0, 0%, 50%) ;

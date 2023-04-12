@@ -37,6 +37,10 @@
 
 }
 
+.html {
+    font-size: var(--base-font-size) ;
+}
+
 .wrapper {
     max-width: var(--width-textarea-max) ;
 }

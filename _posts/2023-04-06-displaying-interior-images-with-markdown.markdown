@@ -14,7 +14,6 @@ top-image-caption: >-
 
 categories: 
 ---
-There are multiple ways to display an interior image (i.e., an image in the body of a post, rather than an image above the title of the post).
 
 <!-- Add a Table of Contents -->
 <div class="table-of-contents" markdown="1">
@@ -23,6 +22,8 @@ There are multiple ways to display an interior image (i.e., an image in the body
 1. TOC
 {:toc}
 </div>
+
+There are multiple ways to display an interior image (i.e., an image in the body of a post, rather than an image above the title of the post).
 
 ## Constructing the full URL, i.e., without using relative_url
 ### Using only the built-in site.url and site.baseurl variables

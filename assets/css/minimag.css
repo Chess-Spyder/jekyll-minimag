@@ -7,6 +7,9 @@
     --site-header-title-font-color: var(--color-white-for-site) ;
     --site-header-background-color: salmon ;
 
+    --table-of-contents-border-color: blue ;
+    --table-of-contents-border-width: 1px ;
+
 }
 
 .wrapper {
@@ -40,6 +43,18 @@ img.top-of-post-image {
 .top-image-caption {
     font-size: 0.8rem ;
     font-style: italic ;
+}
+
+div.table-of-contents {
+    border-style: solid ;
+    border-width: var(--table-of-contents-border-width) ;
+    border-color: var(--table-of-contents-border-color) ;
+    padding: 5px ;
+    margin-block-end: 1.5em ;
+}
+
+div.table-of-contents h2 {
+    font-size: 1.4rem ;
 }
 
 /* CSS for Navbar */
